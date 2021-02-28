@@ -71,6 +71,56 @@ paths:
                     name: "Test"
                     Created_date: "2021-02-27T11:44:18.014Z"
                     __v: 0
+    put:
+      tags:
+        - tasks
+      summary: Update task by ID
+      description: Updates a single task model
+      parameters:
+        - name: taskId
+          in: path
+          description: task id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Updates a single task model
+          content:
+            application/json:
+              schema: object
+              items:
+                  $ref: "#/components/schemas/Task"
+                example:
+                  - _id: "603a30927735b35403eb2bb9"
+                    name: "Update Test"
+                    Created_date: "2021-02-27T11:44:18.014Z"
+                    __v: 0
+    delete:
+      tags:
+        - tasks
+      summary: Delete task by ID
+      description: Deletes a single task model
+      parameters:
+        - name: taskId
+          in: path
+          description: task id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Deletes a single task model
+          content:
+            application/json:
+              schema: object
+              items:
+                  $ref: "#/components/schemas/Task"
+                example:
+                  - _id: "603a30927735b35403eb2bb9"
+                    name: "Update Test"
+                    Created_date: "2021-02-27T11:44:18.014Z"
+                    __v: 0
 components:
   schemas:
     Task:
